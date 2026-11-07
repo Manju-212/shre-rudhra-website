@@ -1,66 +1,71 @@
 const PROJECTS = [
   {
-    id: 'walnut', title: 'The Walnut House', note: 'Walnut · Linen · Afternoon light', type: 'RESIDENCE CONCEPT',
-    description: 'A study in warmth. Rich walnut gives the rooms their rhythm, while linen, soft curves and quiet pools of light bring a sense of ease. Every corner is imagined for the rituals of everyday living.',
-    image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1800&q=88',
-    alt: 'Warm contemporary living room with natural wood and linen',
-    gallery: [
-      'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=85',
-      'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=85',
-      'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1400&q=85',
-      'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=85'
-    ]
+    id: 'walnut', title: 'The Courtyard Villa', note: '3BHK VILLA · TEAK · FAMILY LIVING', type: '3BHK VILLA CONCEPT', tagline: 'A home built around togetherness.',
+    description: 'A full 3BHK villa direction shaped around the way an Indian family lives: a welcoming living room, an easy connection to dining, restful bedrooms and storage planned into the architecture. Warm wood and familiar craft details bring character without making the rooms feel formal.',
+    image: 'https://images.unsplash.com/photo-1682662046457-74fd5b199b92?auto=format&fit=crop&w=1800&q=88',
+    alt: 'Indian home living room in New Delhi with sofa, coffee table and a painting',
+    gallery: ['https://images.unsplash.com/photo-1682662046457-74fd5b199b92?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1577096807123-224044fa0339?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1633605015660-b0f2dbad3bf2?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1667375185256-9bf71ce75e15?auto=format&fit=crop&w=1400&q=85'],
+    galleryLabels: ['LIVING ROOM', 'KITCHEN', 'MASTER BEDROOM', 'DINING']
   },
   {
-    id: 'sage', title: 'A Garden Within', note: 'Sage · Sunlight · Stillness', type: 'SLOW LIVING',
-    description: 'An open, easy home shaped around the calming presence of green. Natural textures, filtered daylight and a few favourite objects make a gentle backdrop for everyday life.',
-    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=88',
-    alt: 'Light filled living room opening onto greenery',
-    gallery: ['https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=85']
+    id: 'sage', title: 'The Everyday 3BHK', note: '3BHK HOME · OPEN LIVING · SMART STORAGE', type: '3BHK HOME CONCEPT', tagline: 'More room for everyday life.',
+    description: 'A practical, warm 3BHK home with the shared spaces at its centre. The living and dining areas connect naturally, while the bedrooms stay private. The design considers Indian cooking, family routines, generous storage and the small moments that make a house feel like home.',
+    image: 'https://images.unsplash.com/photo-1667375185256-9bf71ce75e15?auto=format&fit=crop&w=1800&q=88',
+    alt: 'Residential living room in Chennai with a sofa and coffee table',
+    gallery: ['https://images.unsplash.com/photo-1667375185256-9bf71ce75e15?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1755771984341-546c2a04f236?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1771328756144-02bde5549a9a?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1682662046457-74fd5b199b92?auto=format&fit=crop&w=1400&q=85'],
+    galleryLabels: ['LIVING & DINING', 'MODULAR KITCHEN', 'BEDROOM', 'FAMILY LOUNGE']
   },
   {
-    id: 'clay', title: 'Earth & Memory', note: 'Teak · Terracotta · Indian craft', type: 'MATERIAL STUDY',
-    description: 'A contemporary home with a connection to its roots. Earthy tones, tactile stone and expressive craft bring depth and a sense of familiarity to the rooms.',
-    image: 'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1800&q=88',
-    alt: 'Earthy modern interior with natural materials',
-    gallery: ['https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1400&q=85']
+    id: 'clay', title: 'The Garden Edge Villa', note: '3BHK VILLA · TERRACOTTA · NATURAL LIGHT', type: '3BHK VILLA CONCEPT', tagline: 'A little more connection to the outdoors.',
+    description: 'A villa concept that lets daylight and greenery shape the common areas. Living, dining and a garden-facing edge are treated as one generous family space; three bedrooms, useful storage and a hardworking kitchen complete the home.',
+    image: 'https://images.unsplash.com/photo-1733547369416-75eb36fb8437?auto=format&fit=crop&w=1800&q=88',
+    alt: 'Indian apartment interior in Agra with green walls and a white sofa',
+    gallery: ['https://images.unsplash.com/photo-1733547369416-75eb36fb8437?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1577096807123-224044fa0339?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1633605015660-b0f2dbad3bf2?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1667375185256-9bf71ce75e15?auto=format&fit=crop&w=1400&q=85'],
+    galleryLabels: ['GARDEN-FACING LIVING', 'KITCHEN', 'BEDROOM', 'DINING']
   },
   {
-    id: 'quiet', title: 'The Quiet Edit', note: 'Ivory · Oak · Gentle contrast', type: 'A SOFTER EVERYDAY',
-    description: 'A quiet palette gives shape to a home that feels composed but never cold. Oak, woven textures and soft contrast make room for both calm and character.',
-    image: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1800&q=88',
-    alt: 'Calm neutral living room with oak details',
-    gallery: ['https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1400&q=85']
+    id: 'quiet', title: 'The Warm Modern Home', note: '3BHK INTERIORS · LIVING · DINING · BEDROOMS', type: '3BHK HOME CONCEPT', tagline: 'Familiar materials, a fresh point of view.',
+    description: 'A complete home planned for real routines: a comfortable living room, a dining area close to the kitchen, three personal bedrooms and thoughtful storage. Earthy colours and Indian-made details keep the modern layout feeling rooted and welcoming.',
+    image: 'https://images.unsplash.com/photo-1682662046457-74fd5b199b92?auto=format&fit=crop&w=1800&q=88',
+    alt: 'Contemporary Indian living room with warm natural finishes',
+    gallery: ['https://images.unsplash.com/photo-1682662046457-74fd5b199b92?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1755771984341-546c2a04f236?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1771328756144-02bde5549a9a?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1733547369416-75eb36fb8437?auto=format&fit=crop&w=1400&q=85'],
+    galleryLabels: ['LIVING ROOM', 'KITCHEN', 'BEDROOM', 'LOUNGE']
   },
   {
-    id: 'window-poetry', title: 'Window Poetry', note: 'Daylight · Cotton · Quiet mornings', type: 'INDIVIDUAL SPACE',
-    description: 'A reading corner and window seat become the heart of a small, light-filled retreat. Soft fabric and warm timber make the passing hours part of the design.',
-    image: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1400&q=85', alt: 'Sunlit interior with natural wood', gallery: ['https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1400&q=85']
+    id: 'window-poetry', title: 'The Family Living Room', note: 'GUESTS · TV WALL · EVERYDAY GATHERING', type: 'LIVING ROOM', tagline: 'A place for everyone to come together.',
+    description: 'A living room concept for everyday family time and a full house on the weekend. We look at comfortable seating, a considered TV wall, flexible circulation, display and storage, and a clear connection to dining.',
+    image: 'https://images.unsplash.com/photo-1682662046457-74fd5b199b92?auto=format&fit=crop&w=1400&q=85', alt: 'Indian living room with sofa seating and a statement wall',
+    gallery: ['https://images.unsplash.com/photo-1682662046457-74fd5b199b92?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1667375185256-9bf71ce75e15?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1733547369416-75eb36fb8437?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1577096807123-224044fa0339?auto=format&fit=crop&w=1400&q=85'], galleryLabels: ['SEATING', 'LIVING & DINING', 'A COLOUR STUDY', 'OPEN KITCHEN']
   },
   {
-    id: 'arched-serenity', title: 'Arched Serenity', note: 'Limewash · Curves · Quiet warmth', type: 'INDIVIDUAL SPACE',
-    description: 'Soft arches and gently textured walls give familiar forms a fresh point of view. A relaxed palette lets the architecture take the lead.',
-    image: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=85', alt: 'Sculptural forms in a calm neutral home', gallery: ['https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1400&q=85']
+    id: 'arched-serenity', title: 'The Master Bedroom', note: 'WARDROBE · LAYERED LIGHT · QUIET CORNERS', type: 'BEDROOM', tagline: 'A calmer end to the day.',
+    description: 'A comfortable master bedroom planned around rest and useful storage. Wardrobes, bedside lighting, a dressing area and clear movement around the bed are all considered as part of the room.',
+    image: 'https://images.unsplash.com/photo-1633605015660-b0f2dbad3bf2?auto=format&fit=crop&w=1400&q=85', alt: 'Indian bedroom in Bengaluru with a bed and ceiling fan',
+    gallery: ['https://images.unsplash.com/photo-1633605015660-b0f2dbad3bf2?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1771328756144-02bde5549a9a?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1682662046457-74fd5b199b92?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1667375185256-9bf71ce75e15?auto=format&fit=crop&w=1400&q=85'], galleryLabels: ['MASTER BEDROOM', 'WARDROBE STUDY', 'HOME PALETTE', 'CONNECTED LIVING']
   },
   {
-    id: 'plum-kitchen', title: 'The Plum Kitchen', note: 'Deep plum · Brass · Gathering', type: 'INDIVIDUAL SPACE',
-    description: 'A richly coloured kitchen designed to bring people together. Warm metal, generous surfaces and a considered layout keep it as practical as it is expressive.',
-    image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1400&q=85', alt: 'Warm, material-led kitchen interior', gallery: ['https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=85']
+    id: 'plum-kitchen', title: 'A Bedroom to Grow', note: 'FLEXIBLE STORAGE · STUDY · REST', type: 'BEDROOM', tagline: 'Ready for the next chapter.',
+    description: 'A second or children’s bedroom that can change with the family. A useful study surface, adaptable storage and a restful sleeping area fit together without making the room feel crowded.',
+    image: 'https://images.unsplash.com/photo-1771328756144-02bde5549a9a?auto=format&fit=crop&w=1400&q=85', alt: 'Modern Indian bedroom with fitted wardrobe and bed in Pune',
+    gallery: ['https://images.unsplash.com/photo-1771328756144-02bde5549a9a?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1633605015660-b0f2dbad3bf2?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1682662046457-74fd5b199b92?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1733547369416-75eb36fb8437?auto=format&fit=crop&w=1400&q=85'], galleryLabels: ['BEDROOM', 'WARDROBE', 'HOME PALETTE', 'FAMILY LIVING']
   },
   {
-    id: 'soft-rhythm', title: 'Soft Rhythm', note: 'Texture · Balance · Ease', type: 'INDIVIDUAL SPACE',
-    description: 'A layered living room built from quiet repetition: a repeated curve, a tactile weave, a warm natural tone. Subtle choices make the whole room feel settled.',
-    image: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1400&q=85', alt: 'Layered, warm modern living room', gallery: ['https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1400&q=85']
+    id: 'soft-rhythm', title: 'The Everyday Kitchen', note: 'INDIAN COOKING · MODULAR STORAGE · EASY CLEANUP', type: 'KITCHEN', tagline: 'Made for the everyday rhythm of home.',
+    description: 'A kitchen shaped around the way Indian families cook: practical counter space, well-planned storage, easy-to-reach essentials and a clear path between sink, hob and prep. The layout can be adapted to a straight, L-shaped or U-shaped room.',
+    image: 'https://images.unsplash.com/photo-1577096807123-224044fa0339?auto=format&fit=crop&w=1400&q=85', alt: 'Indian kitchen with brown cabinets in Mumbai',
+    gallery: ['https://images.unsplash.com/photo-1577096807123-224044fa0339?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1755771984341-546c2a04f236?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1667375185256-9bf71ce75e15?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1682662046457-74fd5b199b92?auto=format&fit=crop&w=1400&q=85'], galleryLabels: ['BROWN & WHITE KITCHEN', 'U-SHAPED LAYOUT', 'OPEN DINING', 'LIVING CONNECTION']
   },
   {
-    id: 'daylight-study', title: 'Daylight Study', note: 'Natural light · Stone · Calm', type: 'INDIVIDUAL SPACE',
-    description: 'A simple study of how daylight changes a room. Natural stone and restrained forms offer a quiet canvas for work, thought and pause.',
-    image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=85', alt: 'Daylit room with thoughtful materials', gallery: ['https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=85']
+    id: 'daylight-study', title: 'The Family Dining Room', note: 'SHARED MEALS · OPEN PLAN · EXTRA SEATING', type: 'DINING ROOM', tagline: 'Space for one more at the table.',
+    description: 'A dining space designed for regular family meals and celebrations. We consider table size, movement around chairs, storage for serveware and the relationship between the dining area, kitchen and living room.',
+    image: 'https://images.unsplash.com/photo-1667375185256-9bf71ce75e15?auto=format&fit=crop&w=1400&q=85', alt: 'Indian home interior connecting living and dining areas',
+    gallery: ['https://images.unsplash.com/photo-1667375185256-9bf71ce75e15?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1682662046457-74fd5b199b92?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1577096807123-224044fa0339?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1733547369416-75eb36fb8437?auto=format&fit=crop&w=1400&q=85'], galleryLabels: ['DINING & LIVING', 'FAMILY SEATING', 'KITCHEN CONNECTION', 'A QUIETER PALETTE']
   },
   {
-    id: 'woven-retreat', title: 'Woven Retreat', note: 'Rattan · Linen · Pause', type: 'INDIVIDUAL SPACE',
-    description: 'Woven details, natural fibres and a gentle palette turn a bedroom into a place to slow down. A thoughtful retreat for the end of each day.',
-    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=85', alt: 'Quiet bedroom with natural textures', gallery: ['https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=85']
+    id: 'woven-retreat', title: 'An Optional Pooja Nook', note: 'PERSONAL RITUAL · LIGHT · THOUGHTFUL PLACEMENT', type: 'FAMILY CORNER', tagline: 'A small space with personal meaning.',
+    description: 'An optional, personal prayer corner planned to fit naturally into the home. The concept looks at a calm backdrop, discreet storage, practical lighting and a location that respects the family’s routines.',
+    image: 'https://images.unsplash.com/photo-1733547369416-75eb36fb8437?auto=format&fit=crop&w=1400&q=85', alt: 'Calm Indian home interior with warm colour and natural light',
+    gallery: ['https://images.unsplash.com/photo-1733547369416-75eb36fb8437?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1682662046457-74fd5b199b92?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1667375185256-9bf71ce75e15?auto=format&fit=crop&w=1400&q=85','https://images.unsplash.com/photo-1633605015660-b0f2dbad3bf2?auto=format&fit=crop&w=1400&q=85'], galleryLabels: ['QUIET CORNER', 'LIVING ROOM', 'OPEN HOME', 'PRIVATE ROOM']
   }
 ];
 
@@ -163,6 +168,7 @@ if (projectTitle) {
   projectTitle.textContent = project.title;
   document.querySelector('#projectType').textContent = project.type;
   document.querySelector('#projectNote').textContent = project.note;
+  document.querySelector('#projectTagline').textContent = project.tagline;
   document.querySelector('#projectDescription').textContent = project.description;
   document.querySelector('#projectEnquiry').href = `contact/?project=${encodeURIComponent(project.id)}`;
   const gallery = document.querySelector('#projectGallery');
@@ -172,7 +178,7 @@ if (projectTitle) {
     button.type = 'button';
     button.setAttribute('aria-label', `Enlarge ${project.title} concept image ${index + 1}`);
     button.style.backgroundImage = `url('${image}')`;
-    button.innerHTML = `<span>${['LIVING', 'DINING', 'BEDROOM', 'DETAIL'][index]}</span><b>↗</b>`;
+    button.innerHTML = `<span>${project.galleryLabels[index]}</span><b>↗</b>`;
     button.addEventListener('click', () => {
       const dialog = document.querySelector('#imageDialog');
       const lightboxImage = document.querySelector('#lightboxImage');

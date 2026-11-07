@@ -65,7 +65,6 @@ const PROJECTS = [
 ];
 
 const WHATSAPP_NUMBER = '918121162266';
-const WHATSAPP_MESSAGE = 'Hi Shree Rudra Spaces, I would like to discuss my interiors.';
 
 // Shared mobile navigation
 const menuToggle = document.querySelector('.menu-toggle');
@@ -77,10 +76,25 @@ function setMenu(open) {
   mobileMenu.classList.toggle('open', open);
   mobileMenu.setAttribute('aria-hidden', String(!open));
   document.body.classList.toggle('menu-open', open);
+  if (!open) menuToggle.focus();
 }
-menuToggle?.addEventListener('click', () => setMenu(menuToggle.getAttribute('aria-expanded') !== 'true'));
+menuToggle?.addEventListener('click', () => {
+  const opening = menuToggle.getAttribute('aria-expanded') !== 'true';
+  setMenu(opening);
+  if (opening) mobileMenu.querySelector('.menu-close')?.focus();
+});
+mobileMenu?.querySelectorAll('[data-menu-close]').forEach(button => button.addEventListener('click', () => setMenu(false)));
 mobileMenu?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenu(false)));
-document.addEventListener('keydown', event => { if (event.key === 'Escape') setMenu(false); });
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && mobileMenu?.classList.contains('open')) setMenu(false);
+  if (event.key === 'Tab' && mobileMenu?.classList.contains('open')) {
+    const focusable = [...mobileMenu.querySelectorAll('a[href],button:not([disabled])')].filter(element => element.tabIndex >= 0);
+    const first = focusable[0];
+    const last = focusable.at(-1);
+    if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+    else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+  }
+});
 
 // Home hero carousel
 const heroImage = document.querySelector('#heroImage');
@@ -150,7 +164,7 @@ if (projectTitle) {
   document.querySelector('#projectType').textContent = project.type;
   document.querySelector('#projectNote').textContent = project.note;
   document.querySelector('#projectDescription').textContent = project.description;
-  document.querySelector('#projectEnquiry').href = `contact.html?project=${encodeURIComponent(project.id)}`;
+  document.querySelector('#projectEnquiry').href = `contact/?project=${encodeURIComponent(project.id)}`;
   const gallery = document.querySelector('#projectGallery');
   project.gallery.forEach((image, index) => {
     const button = document.createElement('button');
@@ -221,6 +235,6 @@ if (enquiryForm) {
   });
   const projectParam = new URLSearchParams(window.location.search).get('project');
   const project = PROJECTS.find(item => item.id === projectParam);
-  if (project) document.querySelector('#message').value = `I am interested in a space inspired by ${project.title}.`;
+  if (project) document.querySelector('#message').value = `I loved ${project.title} and would like to discuss my home interiors.`;
   updateConversation();
 }

@@ -9,7 +9,7 @@ A responsive, static interior design studio website. It runs on GitHub Pages wit
 - `project.html?id=walnut` — project detail and image viewer
 - `studio.html` — studio story and values
 - `approach.html` — design process and FAQs
-- `contact.html` — enquiry form that opens WhatsApp or email for the visitor to review and send
+- `contact/` and `contact.html` — project-aware enquiry form that opens WhatsApp or email for the visitor to review and send
 
 ## Run locally
 

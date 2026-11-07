@@ -1,17 +1,18 @@
 # Shree Rudra Spaces
 
-A responsive interior design studio website built with plain HTML, CSS, and JavaScript.
+A responsive, static interior design studio website. It runs on GitHub Pages without a build step or package dependencies.
+
+## Pages
+
+- `index.html` — home and featured concepts
+- `spaces.html` — featured collection and room concepts
+- `project.html?id=walnut` — project detail and image viewer
+- `studio.html` — studio story and values
+- `approach.html` — design process and FAQs
+- `contact.html` — enquiry form that opens WhatsApp or email for the visitor to review and send
 
 ## Run locally
 
-Open `index.html` in a browser, or serve the folder with any static file server. The project has no build step or package dependencies.
+Open `index.html` in a browser or serve this folder with any static file server.
 
-## Structure
-
-- `index.html` — page content and semantic structure
-- `styles.css` — responsive layout, typography, and visual styles
-- `script.js` — hero slideshow and mobile navigation
-
-Photography is loaded from Unsplash. Replace the WhatsApp number and studio email in `index.html` with the final contact details before launch if they differ.
-# shre-rudhra-website
-# shre-rudhra-website
+Photography is loaded from Unsplash. Replace the WhatsApp number, studio email, website address, and location in the HTML and `script.js` if the studio contact details change.

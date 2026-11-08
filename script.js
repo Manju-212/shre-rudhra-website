@@ -84,11 +84,11 @@ const WHATSAPP_NUMBER = '918121162266';
   loader.className = 'site-loader';
   loader.setAttribute('role', 'status');
   loader.setAttribute('aria-label', 'Welcome to Shree Rudra Spaces');
-  loader.innerHTML = `<div class="loader-mark" aria-hidden="true"><svg viewBox="0 0 120 120" fill="none"><path class="loader-roof" d="M18 59 60 19l42 40M29 51v51h62V51M47 102V69l13-13 13 13v33M39 102h42"/><circle class="loader-sun" cx="60" cy="41" r="4"/></svg></div><span class="loader-wordmark"><small>SHREE</small><strong>RUDRA</strong><small>SPACES</small></span>`;
+  loader.innerHTML = `<div class="loader-mark" aria-hidden="true"><svg viewBox="0 0 120 120" fill="none"><path class="loader-petal" d="M60 108V18C48 36 31 47 22 62 13 78 17 96 21 106M60 18c12 18 29 29 38 44 9 16 5 34 1 44M31 108V65M89 108V65"/><path class="loader-arch" d="M37 108V65c0-13 13-23 23-34 10 11 23 21 23 34v43"/><path class="loader-door" d="M48 108V75c0-8 6-14 12-20 6 6 12 12 12 20v33M48 88h24M54 99h12"/><path class="loader-ground" d="M15 110h90"/><circle class="loader-sun" cx="60" cy="43" r="3.2"/></svg></div><span class="loader-wordmark"><small>SHREE</small><strong>RUDRA</strong><small>SPACES</small></span><span class="loader-caption">A HOME TAKES SHAPE</span><span class="loader-progress" aria-hidden="true"><i></i></span>`;
   document.body.classList.add('site-loading');
   document.body.prepend(loader);
   const motionReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const minimumTime = motionReduced ? 300 : 1450;
+  const minimumTime = motionReduced ? 300 : 3650;
   const startedAt = performance.now();
   let dismissScheduled = false;
   const dismiss = () => {
@@ -103,7 +103,7 @@ const WHATSAPP_NUMBER = '918121162266';
   };
   if (document.readyState === 'complete') dismiss();
   else window.addEventListener('load', dismiss, { once: true });
-  window.setTimeout(dismiss, motionReduced ? 700 : 2600);
+  window.setTimeout(dismiss, motionReduced ? 700 : 5000);
 })();
 
 // Shared mobile navigation

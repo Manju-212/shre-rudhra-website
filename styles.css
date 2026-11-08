@@ -152,3 +152,32 @@ body.menu-open{overflow:hidden}
 .process-four{background-image:url('https://images.unsplash.com/photo-1733547369416-75eb36fb8437?auto=format&fit=crop&w=1100&q=85')}
 .project-type{color:var(--clay)}
 .space-choices button.is-active{background:var(--clay)}
+
+/* Motion and material language adapted from the refreshed Rudhra reference site. */
+.hero-image{transform:scale(1.035);transition:transform 8s cubic-bezier(.2,.65,.25,1),filter .65s ease,opacity .28s ease}
+.hero:not(.slide-changing) .hero-image{transform:scale(1)}
+.hero.slide-changing .hero-image{filter:brightness(.82);opacity:.3;transform:scale(1.035)}
+.hero-caption,.hero-controls,.hero-content>.eyebrow,.hero-content h1,.hero-content>.hero-subtitle,.hero-content>.button{animation:hero-arrive .75s both}
+.hero-content h1{animation-delay:100ms}.hero-content>.hero-subtitle{animation-delay:180ms}.hero-content>.button{animation-delay:240ms}.hero-controls{animation-delay:320ms}
+@keyframes hero-arrive{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.motion-reveal{opacity:0;transform:translateY(28px);transition:opacity .72s ease,transform .72s cubic-bezier(.2,.7,.2,1);transition-delay:var(--reveal-delay,0ms)}
+.motion-reveal.is-visible{opacity:1;transform:translateY(0)}
+.project-card .project-image,.manifesto-image,.process-photo,.contact-page-image{transition:transform .9s cubic-bezier(.2,.65,.25,1),background-position .9s ease}
+.project-card:hover .project-image,.process-card:hover .process-photo{transform:scale(1.025)}
+.button,.header-cta,.menu-panel-cta{transition:transform .25s ease,box-shadow .25s ease,background-color .25s ease}
+.button:hover,.header-cta:hover,.menu-panel-cta:hover{transform:translateY(-3px);box-shadow:0 12px 28px #35281924}
+.material-language{padding:22px 5% 76px}
+.material-heading{max-width:700px;margin-bottom:34px}
+.material-heading h2{font:400 clamp(42px,6.2vw,72px)/1 var(--serif);letter-spacing:-.045em;margin:16px 0}
+.material-heading h2 em{color:var(--clay);font-weight:400}
+.material-heading>p{max-width:490px;font-size:12px;line-height:1.85;color:#69655e}
+.material-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.material-card h3{font:400 22px var(--serif);margin:13px 0 4px}
+.material-card p{font-size:9px;color:var(--muted);margin:0}
+.material-swatch{height:clamp(130px,16vw,205px);border-radius:48% 48% 2px 2px;overflow:hidden;position:relative;box-shadow:inset 0 0 0 1px #30261910}
+.swatch-stone{background:repeating-linear-gradient(135deg,#d5d1c5 0 17px,#c6c1b5 18px 19px,#ddd9cf 20px 42px)}
+.swatch-wood{background:repeating-linear-gradient(93deg,#c7a37a 0 4px,#bb9365 5px 8px,#d2b18a 9px 22px,#bd986d 23px 26px)}
+.swatch-copper{background:linear-gradient(120deg,#98704f,#d1aa79 38%,#f0d5ad 51%,#a67850 82%)}
+.swatch-weave{background-color:#d9d0c0;background-image:repeating-linear-gradient(0deg,#8d765c1c 0 1px,transparent 1px 5px),repeating-linear-gradient(90deg,#8d765c1c 0 1px,transparent 1px 5px)}
+@media(max-width:560px){.material-language{padding:12px 0 52px}.material-heading{margin-bottom:24px}.material-heading h2{font-size:45px}.material-grid{grid-template-columns:repeat(2,1fr);gap:23px 14px}.material-swatch{height:clamp(135px,43vw,210px)}.material-card h3{font-size:19px}}
+@media(prefers-reduced-motion:reduce){.hero-image,.motion-reveal,.project-card .project-image,.process-photo,.button,.header-cta,.menu-panel-cta{transition:none!important;animation:none!important}.motion-reveal{opacity:1;transform:none}}

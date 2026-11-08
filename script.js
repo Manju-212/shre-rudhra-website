@@ -106,17 +106,37 @@ const heroImage = document.querySelector('#heroImage');
 if (heroImage) {
   const featuredProjects = PROJECTS.slice(0, 4);
   let currentSlide = 0;
+  const hero = heroImage.closest('.hero');
+  let carouselTimer;
+  let transitionTimer;
   const showSlide = index => {
     currentSlide = (index + featuredProjects.length) % featuredProjects.length;
     const project = featuredProjects[currentSlide];
-    heroImage.style.backgroundImage = `url('${project.image}')`;
-    heroImage.setAttribute('aria-label', project.alt);
-    document.querySelector('#slideTitle').textContent = project.title;
-    document.querySelector('#slideNote').textContent = project.note;
-    document.querySelector('#slideNumber').textContent = String(currentSlide + 1).padStart(2, '0');
+    hero?.classList.add('slide-changing');
+    window.clearTimeout(transitionTimer);
+    transitionTimer = window.setTimeout(() => {
+      heroImage.style.backgroundImage = `url('${project.image}')`;
+      heroImage.setAttribute('aria-label', project.alt);
+      document.querySelector('#slideTitle').textContent = project.title;
+      document.querySelector('#slideNote').textContent = project.note;
+      document.querySelector('#slideNumber').textContent = String(currentSlide + 1).padStart(2, '0');
+      requestAnimationFrame(() => hero?.classList.remove('slide-changing'));
+    }, 280);
   };
-  document.querySelector('#prevSlide')?.addEventListener('click', () => showSlide(currentSlide - 1));
-  document.querySelector('#nextSlide')?.addEventListener('click', () => showSlide(currentSlide + 1));
+  const restartCarousel = () => {
+    window.clearInterval(carouselTimer);
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && !document.hidden) {
+      carouselTimer = window.setInterval(() => showSlide(currentSlide + 1), 7000);
+    }
+  };
+  document.querySelector('#prevSlide')?.addEventListener('click', () => { showSlide(currentSlide - 1); restartCarousel(); });
+  document.querySelector('#nextSlide')?.addEventListener('click', () => { showSlide(currentSlide + 1); restartCarousel(); });
+  hero?.addEventListener('pointerenter', () => window.clearInterval(carouselTimer));
+  hero?.addEventListener('pointerleave', restartCarousel);
+  hero?.addEventListener('focusin', () => window.clearInterval(carouselTimer));
+  hero?.addEventListener('focusout', restartCarousel);
+  document.addEventListener('visibilitychange', restartCarousel);
+  restartCarousel();
 }
 
 // Spaces collection: update the feature panel and its accessible selectors.
@@ -243,4 +263,22 @@ if (enquiryForm) {
   const project = PROJECTS.find(item => item.id === projectParam);
   if (project) document.querySelector('#message').value = `I loved ${project.title} and would like to discuss my home interiors.`;
   updateConversation();
+}
+
+// Reveal page content as it enters view; content remains visible if motion is reduced.
+if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const revealTargets = document.querySelectorAll('.page-intro-block, .spaces-feature, .room-card, .studio-panorama, .studio-belief, .studio-values article, .process-card, .faq-section, .contact-page-image, .contact-page-content, .project-story, .project-gallery-item');
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.14, rootMargin: '0px 0px -35px 0px' });
+  revealTargets.forEach((element, index) => {
+    element.classList.add('motion-reveal');
+    element.style.setProperty('--reveal-delay', `${Math.min(index % 4, 3) * 85}ms`);
+    revealObserver.observe(element);
+  });
 }

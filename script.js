@@ -71,6 +71,41 @@ const PROJECTS = [
 
 const WHATSAPP_NUMBER = '918121162266';
 
+// One quiet brand entrance per browser tab, with a quick path for reduced motion.
+(() => {
+  let alreadySeen = false;
+  try {
+    alreadySeen = sessionStorage.getItem('rudhra-intro-seen') === 'yes';
+    sessionStorage.setItem('rudhra-intro-seen', 'yes');
+  } catch { /* Continue without session storage when unavailable. */ }
+  if (alreadySeen || !document.body) return;
+
+  const loader = document.createElement('div');
+  loader.className = 'site-loader';
+  loader.setAttribute('role', 'status');
+  loader.setAttribute('aria-label', 'Welcome to Shree Rudra Spaces');
+  loader.innerHTML = `<div class="loader-mark" aria-hidden="true"><svg viewBox="0 0 120 120" fill="none"><path class="loader-roof" d="M18 59 60 19l42 40M29 51v51h62V51M47 102V69l13-13 13 13v33M39 102h42"/><circle class="loader-sun" cx="60" cy="41" r="4"/></svg></div><span class="loader-wordmark"><small>SHREE</small><strong>RUDRA</strong><small>SPACES</small></span>`;
+  document.body.classList.add('site-loading');
+  document.body.prepend(loader);
+  const motionReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const minimumTime = motionReduced ? 300 : 1450;
+  const startedAt = performance.now();
+  let dismissScheduled = false;
+  const dismiss = () => {
+    if (dismissScheduled) return;
+    dismissScheduled = true;
+    const delay = Math.max(0, minimumTime - (performance.now() - startedAt));
+    window.setTimeout(() => {
+      loader.classList.add('site-loader-out');
+      document.body.classList.remove('site-loading');
+      window.setTimeout(() => loader.remove(), motionReduced ? 0 : 600);
+    }, delay);
+  };
+  if (document.readyState === 'complete') dismiss();
+  else window.addEventListener('load', dismiss, { once: true });
+  window.setTimeout(dismiss, motionReduced ? 700 : 2600);
+})();
+
 // Shared mobile navigation
 const menuToggle = document.querySelector('.menu-toggle');
 const mobileMenu = document.querySelector('.mobile-menu');
@@ -136,6 +171,17 @@ if (heroImage) {
   hero?.addEventListener('focusin', () => window.clearInterval(carouselTimer));
   hero?.addEventListener('focusout', restartCarousel);
   document.addEventListener('visibilitychange', restartCarousel);
+  let touchStartX = null;
+  hero?.addEventListener('pointerdown', event => { touchStartX = event.clientX; }, { passive: true });
+  hero?.addEventListener('pointerup', event => {
+    if (touchStartX === null) return;
+    const swipeDistance = event.clientX - touchStartX;
+    touchStartX = null;
+    if (Math.abs(swipeDistance) > 55) {
+      showSlide(currentSlide + (swipeDistance < 0 ? 1 : -1));
+      restartCarousel();
+    }
+  }, { passive: true });
   restartCarousel();
 }
 

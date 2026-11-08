@@ -4,12 +4,13 @@ A responsive, static interior design studio website focused on Indian 3BHK homes
 
 ## Pages
 
-- `index.html` — home and featured concepts
-- `spaces.html` — featured collection and room concepts
-- `project.html?id=walnut` — project detail and image viewer
-- `studio.html` — studio story and values
+- `index.html` — homepage and featured concepts
+- `spaces.html` — full-home and room concepts
+- `project.html?id=walnut` — project concept detail and image viewer
+- `studio.html` — studio story and design values
+- `elements.html` — material and texture directions
 - `approach.html` — design process and FAQs
-- `contact/` and `contact.html` — project-aware enquiry form that opens WhatsApp or email for the visitor to review and send
+- `contact.html` and `contact/` — enquiry form that opens WhatsApp or email for the visitor to review and send
 
 ## Run locally
 

@@ -139,22 +139,52 @@ document.addEventListener('keydown', event => {
 // Home hero carousel
 const heroImage = document.querySelector('#heroImage');
 if (heroImage) {
-  const featuredProjects = PROJECTS.slice(0, 4);
+  const featuredProjects = PROJECTS.slice(0, 8);
+  const featuredImages = [
+    'https://images.pexels.com/photos/34101200/pexels-photo-34101200/free-photo-of-cozy-balcony-with-sunset-and-indoor-plants-vibe.jpeg?auto=compress&cs=tinysrgb&w=2400',
+    featuredProjects[0].image,
+    featuredProjects[1].image,
+    featuredProjects[2].image,
+    'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2400&q=92',
+    featuredProjects[5].image,
+    featuredProjects[6].image,
+    featuredProjects[7].image
+  ];
+  const featuredImageAlts = [
+    'Sunlit balcony with warm seating, potted plants and a sunset',
+    'Indian living room with warm timber display shelving',
+    'Indian home living area with a sofa and coffee table',
+    'Contemporary Indian living room with earthy colors',
+    'Warm open-plan living room with natural wood and comfortable seating',
+    'Indian master bedroom with a ceiling fan and bedside furnishings',
+    'Modern bedroom with fitted wardrobe and soft natural light',
+    'Indian home kitchen with wood cabinetry and clean counter space'
+  ];
+  const homeClients = [
+    { name: 'Aditya Varma', area: '2,750 SQ FT' },
+    { name: 'Arahav Mehta', area: '2,450 SQ FT' },
+    { name: 'Ananya Rao', area: '3,200 SQ FT' },
+    { name: 'Vikram Reddy', area: '2,800 SQ FT' },
+    { name: 'Neha Sharma', area: '1,850 SQ FT' },
+    { name: 'Rohan Kapoor', area: '2,100 SQ FT' },
+    { name: 'Ishita Nair', area: '3,600 SQ FT' },
+    { name: 'Priya Desai', area: '1,650 SQ FT' }
+  ];
   let currentSlide = 0;
   const hero = heroImage.closest('.hero');
+  const clientChoices = [...document.querySelectorAll('[data-home-choice]')];
   let carouselTimer;
   let transitionTimer;
   const showSlide = index => {
     currentSlide = (index + featuredProjects.length) % featuredProjects.length;
-    const project = featuredProjects[currentSlide];
     hero?.classList.add('slide-changing');
     window.clearTimeout(transitionTimer);
     transitionTimer = window.setTimeout(() => {
-      heroImage.style.backgroundImage = `url('${project.image}')`;
-      heroImage.setAttribute('aria-label', project.alt);
-      document.querySelector('#slideTitle').textContent = project.title;
-      document.querySelector('#slideNote').textContent = project.note;
+      heroImage.style.backgroundImage = `url('${featuredImages[currentSlide]}')`;
+      heroImage.setAttribute('aria-label', featuredImageAlts[currentSlide]);
+      document.querySelector('#homeSlideAnnouncement').textContent = `${homeClients[currentSlide].name}, ${homeClients[currentSlide].area}`;
       document.querySelector('#slideNumber').textContent = String(currentSlide + 1).padStart(2, '0');
+      clientChoices.forEach((button, choiceIndex) => button.setAttribute('aria-pressed', String(choiceIndex === currentSlide)));
       requestAnimationFrame(() => hero?.classList.remove('slide-changing'));
     }, 280);
   };
@@ -166,6 +196,7 @@ if (heroImage) {
   };
   document.querySelector('#prevSlide')?.addEventListener('click', () => { showSlide(currentSlide - 1); restartCarousel(); });
   document.querySelector('#nextSlide')?.addEventListener('click', () => { showSlide(currentSlide + 1); restartCarousel(); });
+  clientChoices.forEach((button, index) => button.addEventListener('click', () => { showSlide(index); restartCarousel(); }));
   hero?.addEventListener('pointerenter', () => window.clearInterval(carouselTimer));
   hero?.addEventListener('pointerleave', restartCarousel);
   hero?.addEventListener('focusin', () => window.clearInterval(carouselTimer));

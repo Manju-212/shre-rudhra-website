@@ -9,8 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400;1,6..96,500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=10" />
-    <script src="script.js?v=3" defer></script>
+    <link rel="stylesheet" href="styles.css?v=11" />
+    <script src="script.js?v=4" defer></script>
   </head>
   <body>
     <header class="site-header" id="top">
@@ -27,24 +27,29 @@
 
     <main>
       <section class="hero" aria-label="Featured interior">
-        <div class="hero-image" id="heroImage" role="img" aria-label="Indian home living room with warm wood and family seating"></div>
+        <div class="hero-image" id="heroImage" role="img" aria-label="Sunlit home balcony with warm seating and indoor plants"></div>
         <div class="hero-shade"></div>
         <div class="hero-topline"><span>INDIAN HOMES · 3BHK · VILLAS</span><span>HYDERABAD · INDIA</span></div>
-        <div class="hero-content">
-          <p class="eyebrow hero-eyebrow">ROOM-BY-ROOM, AND ALL TOGETHER</p>
-          <h1>Thoughtfully<br /><em>designed.</em></h1>
-          <p class="hero-subtitle">Beautifully lived.</p>
-          <a href="spaces.html" class="button button-light">Explore our spaces <span>↗</span></a>
+        <span class="hero-disclaimer">Names and areas shown as supplied · photographs are illustrative</span>
+        <div class="hero-client-rail" role="group" aria-label="Featured client homes">
+          <button type="button" data-home-choice="0" aria-pressed="true"><span>Aditya Varma</span><small>2,750 SQ FT</small></button>
+          <button type="button" data-home-choice="1" aria-pressed="false"><span>Arahav Mehta</span><small>2,450 SQ FT</small></button>
+          <button type="button" data-home-choice="2" aria-pressed="false"><span>Ananya Rao</span><small>3,200 SQ FT</small></button>
+          <button type="button" data-home-choice="3" aria-pressed="false"><span>Vikram Reddy</span><small>2,800 SQ FT</small></button>
+          <button type="button" data-home-choice="4" aria-pressed="false"><span>Neha Sharma</span><small>1,850 SQ FT</small></button>
+          <button type="button" data-home-choice="5" aria-pressed="false"><span>Rohan Kapoor</span><small>2,100 SQ FT</small></button>
+          <button type="button" data-home-choice="6" aria-pressed="false"><span>Ishita Nair</span><small>3,600 SQ FT</small></button>
+          <button type="button" data-home-choice="7" aria-pressed="false"><span>Priya Desai</span><small>1,650 SQ FT</small></button>
+          <span class="sr-only" id="homeSlideAnnouncement" aria-live="polite">Aditya Varma, 2,750 square feet</span>
         </div>
-        <div class="hero-caption"><span class="caption-title" id="slideTitle">The Courtyard Villa</span><span id="slideNote">3BHK VILLA · TEAK · FAMILY LIVING</span></div>
-        <div class="hero-controls"><span class="slide-count"><b id="slideNumber">01</b> / 04</span><button aria-label="Previous space" id="prevSlide">←</button><button aria-label="Next space" id="nextSlide">→</button></div>
+        <div class="hero-controls"><span class="slide-count"><b id="slideNumber">01</b> / 08</span><button aria-label="Previous home" id="prevSlide">←</button><button aria-label="Next home" id="nextSlide">→</button></div>
         <a class="scroll-cue" href="#studio"><span></span> SCROLL TO EXPLORE</a>
       </section>
 
       <section class="intro section-pad" id="studio">
         <div class="section-kicker"><span>01 — A MORE PERSONAL APPROACH</span><span>THE STUDIO</span></div>
         <div class="intro-grid">
-          <h2>Good design is<br />felt <em>every day.</em></h2>
+          <h1>Your home.<br /><em>Your story.</em></h1>
           <div class="intro-copy"><p>We design Indian homes around the way families live: a welcoming living room, a hardworking kitchen, restful bedrooms and the details that bring the whole 3BHK together.</p><a class="text-link" href="studio.html">A little about our studio <span>↗</span></a></div>
         </div>
         <div class="values-row"><span>PERSONAL BY DESIGN</span><span>ROOTED IN MATERIALS</span><span>MADE FOR REAL LIFE</span></div>
